@@ -53,5 +53,5 @@ app.use(function(err, req, res, next) {
 
 
 
-console.log('Ya Yeet')
+console.log('Ya Yeet!')
 module.exports = app;
