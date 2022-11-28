@@ -1,0 +1,14 @@
+doctype html
+html
+  head
+    title= 'The Daily Quip'
+    link(rel='stylesheet', href='/styles/style.css')
+  body
+    block content
+      div.heading1
+        h1= 'The Daily Quip'
+      div.input_box 
+        form(action="" method="POST" name="quipinput")
+          label( for='quiptext')=prompt
+          input.quip-text(id='quiptext' type='text' placeholder='Something Quippy')
+          input.quip-submit(name="submit" type='submit')
