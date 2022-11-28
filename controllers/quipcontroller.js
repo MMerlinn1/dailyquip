@@ -6,7 +6,7 @@ const modelprompts = require("../models/prompts");
 
 exports.getprompt = function(req, res, next) {
   modelprompts.findOne({promptid: "1" })
-  console.log(req.body)
+  console.log(req)
   
 }
 

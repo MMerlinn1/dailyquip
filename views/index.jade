@@ -7,7 +7,7 @@ html
     block content
       div.heading1
         h1= 'The Daily Quip'
-      div.input_box 
+      div.input_boxx
         form(action="../routes" method="POST" name="quipinput")
           button( type='submit' onclick='../routes/quip/getprompt')Get Prompt 
           input.quip-text(id='quiptext' type='text' placeholder='Something Quippy')
