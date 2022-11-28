@@ -38,35 +38,20 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-function connectionMongo() {
-  return new Promise((resolve, reject) => {
+
+  
    
     const { MongoClient, ServerApiVersion } = require('mongodb');
     const uri = "mongodb+srv://CRozell04:<1YtuC0RZGbt3XJQW>@cluster0.axbbnru.mongodb.net/?retryWrites=true&w=majority";
     const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-   resolve( client.connect(err => {
       const collection = client.db("test").collection("devices");
       // perform actions on the collection object
       client.stop();
-    })
-    );
-  })
-}
-
-const { model, Mongoose } = require("mongoose");
-const modelprompts = require("C:/Users/Mpeng/The Daily Quip/models/prompts");
-
-
-async function prompts() {
-  await connectionMongo()
-  console.log('mongo connected')
+    
+    
   
-}
-prompts()
-exports.prompt = function(req, res, next) {
-  modelprompts.findOne()
-  console.log(req)
-  
-}
+
+
+
 console.log('Ya Yeet')
 module.exports = app;

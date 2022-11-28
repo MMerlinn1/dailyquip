@@ -3,6 +3,6 @@ var router = express.Router();
 let quipcontroller = require('../controllers/quipcontroller')
 
 /* GET home page. */
-router.get('/', quipcontroller.prompt); 
+router.get('/', quipcontroller.start); 
 
 module.exports = router;

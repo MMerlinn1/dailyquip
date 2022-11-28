@@ -3,14 +3,13 @@ const quips = require("../models/quips");
 const users = require('../models/users')
 const modelprompts = require("../models/prompts");
 
-let dailyprompt;
-exports.prompt = function(req, res, next) {
-  return new Promise((resolve, reject) => {   
-   resolve(modelprompts.findOne())
-  })
+
+exports.getprompt = function(req, res, next) {
+  modelprompts.findOne({promptid: "1" })
+  console.log(req.body)
   
 }
-async function prompt() {
-  let response = await modelprompts.findOne()
-  console.log(response);
+
+exports.start = function(req, res, next) {
+  res.render('index')
 }
