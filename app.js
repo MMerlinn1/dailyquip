@@ -3,9 +3,19 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+const mongoose = require("mongoose");
+
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+
+function mongoconnect() {
+mongoose.connect(
+  "mongodb+srv://CRozell04:VeRXDFXV4kJBmPPG@cluster0.axbbnru.mongodb.net/?retryWrites=true&w=majority",
+);
+};
+mongoconnect();
+
 
 var app = express();
 
@@ -41,13 +51,7 @@ app.use(function(err, req, res, next) {
 
   
    
-    const { MongoClient, ServerApiVersion } = require('mongodb');
-    const uri = "mongodb+srv://CRozell04:<1YtuC0RZGbt3XJQW>@cluster0.axbbnru.mongodb.net/?retryWrites=true&w=majority";
-    const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
-      const collection = client.db("test").collection("devices");
-      // perform actions on the collection object
-      client.stop();
-    
+
     
   
 
